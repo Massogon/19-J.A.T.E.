@@ -1,11 +1,11 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
-const { InjectManifest } = require('workbox-webpack-plugin'); // Only using InjectManifest
+const { InjectManifest } = require('workbox-webpack-plugin');
 const path = require('path');
 
 module.exports = () => {
   return {
-    mode: 'development', // Use 'production' for deployment
+    mode: 'development',
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js',
@@ -13,11 +13,11 @@ module.exports = () => {
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
-      clean: true, // Clean the dist folder before each build
+      clean: true, 
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './index.html', // Ensure this points to your source index.html
+        template: './index.html',
         title: 'Just Another Text Editor',
       }),
       new WebpackPwaManifest({
@@ -36,11 +36,10 @@ module.exports = () => {
           },
         ],
       }),
-
-      // Manually injecting the manifest into your custom service worker
+      // Remove GenerateSW and keep only InjectManifest
       new InjectManifest({
-        swSrc: './src-sw.js', // Path to your custom service worker file
-        swDest: 'service-worker.js', // Destination for service worker in the 'dist' folder
+        swSrc: './src-sw.js',
+        swDest: 'service-worker.js',
       }),
     ],
     
