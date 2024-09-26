@@ -4,12 +4,12 @@
   "description": "",
   "main": "server.js",
 "scripts": {
-  "start": "node server/server.js",
-  "build": "cd client && npm run build",
-  "start:dev": "concurrently \"npm run server\" \"cd client && npm run dev\"",
-  "server": "nodemon server/server.js",
-  "client": "cd client && npm start",
-  "dev": "cd client && npm run dev"
+  "start": "node server/server.js", // This points to the correct location of server.js
+  "build": "cd client && npm run build", // This builds your client-side code
+  "start:dev": "concurrently \"npm run server\" \"cd client && npm run dev\"", // For local development
+  "server": "nodemon server/server.js", // For local server development
+  "client": "cd client && npm start", // For client development
+  "dev": "cd client && npm run dev" // Local client dev mode
 },
   "keywords": [],
   "author": "",
