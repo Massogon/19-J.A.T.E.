@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "scripts": {
-    "start": "node server/server.js",
-    "build": "cd client && npm run build",
-    "start:dev": "concurrently \"npm run server\" \"cd client && npm run dev\"",
-    "server": "nodemon server/server.js",
-    "client": "cd client && npm start",
-    "dev": "cd client && npm run dev"
-  },
+"scripts": {
+  "start": "node server/server.js",
+  "build": "cd client && npm run build",
+  "start:dev": "concurrently \"npm run server\" \"cd client && npm run dev\"",
+  "server": "nodemon server/server.js",
+  "client": "cd client && npm start",
+  "dev": "cd client && npm run dev"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
