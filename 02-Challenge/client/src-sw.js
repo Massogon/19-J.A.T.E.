@@ -39,15 +39,6 @@ registerRoute(
       new CacheableResponsePlugin({
         statuses: [0, 200], // Only cache valid responses
       }),
-      // new ExpirationPlugin({
-      //   maxEntries: 60, // Cache up to 60 assets
-      //   maxAgeSeconds: 30 * 24 * 60 * 60, // Cache assets for 30 days
-      // }),
     ],
   })
 );
-
-// Optional: Add an offline fallback (for when the user is offline and asset is missing)
-// offlineFallback({
-//   pageFallback: '/offline.html',
-// });
